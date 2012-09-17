@@ -1,4 +1,10 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Admin</b> and script/action name <b>update</b></p>
-</div>
+<?php echo $this->form; ?>
+<script>
+$(function(){
+	$('input:radio, input:checkbox').each(function(){
+		if($(this).val() == 1)
+			$(this).attr('checked' , 'checked');
+		});
+	});
+
+</script>
