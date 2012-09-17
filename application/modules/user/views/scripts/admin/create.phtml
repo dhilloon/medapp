@@ -1,4 +1,45 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Admin</b> and script/action name <b>create</b></p>
-</div>
+<?php echo $this->form; ?>
+<script>
+$(function(){
+	//create form actions
+	$('input').blur(function(){
+		//get element id
+		var id = $(this).attr('id');
+		doValidate(id);
+	});
+
+});
+//do form vaildation
+function doValidate(id){
+	var data = {},
+		url = '/user/async/validate';
+	$('input').each(function(){
+		data[$(this).attr('name')] = $(this).val()
+	});
+	$.post(url,
+			data,
+			function(resp){
+				//check for error
+				if(resp){
+					//empty error span
+					$('#'+id+'-error').empty();
+					//inject error
+				$('#'+id).after(getErrorHtml(resp[id], id));
+				}
+			}, 'json');
+	
+}
+//display errors
+function getErrorHtml(formErrors, id){
+	if(formErrors){
+	var e ='<span id="'+id+'-error" class="help-block error"><span data-icon="~"></span>'
+		for(errorKey in formErrors){
+			 e += ' ' + formErrors[errorKey];
+		}
+		e += '</span>'
+			return e;
+	}else{
+		$('#'+id+'-error').hide()
+	}
+}
+</script>
