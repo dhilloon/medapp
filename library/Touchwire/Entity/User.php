@@ -3,7 +3,7 @@
 namespace Touchwire\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 
-/** @Entity(repositoryClass="Touchwire\Entity\Repository\User")
+/** @Entity(repositoryClass="Touchwire\Entity\Repository\UserRepo")
  * @Table(name="users") 
  * */
 class User {
