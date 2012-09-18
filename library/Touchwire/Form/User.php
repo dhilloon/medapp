@@ -18,11 +18,7 @@ class Touchwire_Form_User extends Zend_Form {
 		
 		$this->setName('user');
 		$this->setMethod('post');
-		//decorators
-// 		$input = new Touchwire_Form_Decorator_Input();
-// 		$password = new Touchwire_Form_Decorator_Password();
-// 		$option = new Touchwire_Form_Decorator_Checkbox();
-// 		$btn = new Touchwire_Form_Decorator_Button();
+
 		
 		$id = new Zend_Form_Element_Hidden('id');
 		
@@ -37,7 +33,7 @@ class Touchwire_Form_User extends Zend_Form {
 			->setAttrib('class', 'span3')
 			->setRequired(true)
 			->addValidator('StringLength', false, array(4,15));
-		
+		//add match validator
 		$pswd2 = new Zend_Form_Element_Password('pswd2');
 		$pswd2->setLabel('Repeat Password')
 			->setAttrib('class', 'span3');

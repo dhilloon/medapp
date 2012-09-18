@@ -126,6 +126,6 @@ class TouchwireEntityUserProxy extends \Touchwire\Entity\User implements \Doctri
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'username', 'password', 'role', 'active', 'lastLogin', 'createdAt', 'updatedAt');
+        return array('__isInitialized__', 'id', 'username', 'password', 'role', 'active', 'lastLogin', 'createdAt', 'updatedAt', 'userdata');
     }
 }

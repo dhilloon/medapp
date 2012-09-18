@@ -1,5 +1,31 @@
-<?php 
+<table class="table table-condensed table-bordered" >
+  <tr>
+    <th colspan="2">Details</th>
+    </tr>
+  
+    <?php 
 	foreach ($this->users as $u){
-		echo '<li><a href="/user/delete/'.$u->getId().'">'.$u->getUsername().'</a></li>'; 
+		?>
+		<tr>
+			<td><strong><?php echo $u->getUsername()?></strong></td>
+			<td>
+				<a   class="btn btn-small" 
+					 href="/profile/<?php echo $u->getId()?>"
+					 data-icon="W" >
+				View</a>
+				<a   class="btn btn-small" 
+					 href="/user/update/<?php echo $u->getId()?>"
+					 data-icon="a" >
+				Edit</a>
+				<a   class="btn btn-small" 
+					 href="/user/delete/<?php echo $u->getId()?>"
+					 data-icon="ç" >
+				Delete</a>
+			</td>
+		</tr>
+			<?php  
 	}
 ?>
+  
+</table>
+
