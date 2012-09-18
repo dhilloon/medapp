@@ -50,12 +50,12 @@ class User {
 	protected $updatedAt;
 
 	// 	//relatioships
-	// 	/**
-	// 	 *
-	// 	 * @param \Doctrine\Common\Collections\ArrayCollection $property
-	// 	 * @OneToMany(targetEntity="UserData", mappedBy="user", cascade={"persist", "remove"})
-	// 	 */
-	// 	protected $userdata;
+		/**
+		 *
+		 * @param \Doctrine\Common\Collections\ArrayCollection $property
+		 * @OneToMany(targetEntity="UserData", mappedBy="user", cascade={"persist", "remove"})
+		 */
+		protected $userdata;
 
 	// 	/**
 	// 	 *
